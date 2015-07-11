@@ -7,27 +7,7 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,
 from resources.lib.net import Net
 net=Net()
 
-       
-####################################################### DATABASE #####################################################
-
-def clean_db(old, new):
-	try:
-		con = sqlite3.connect(db)
-		con.execute("update movie set c22 = '"+ new +"' where c22 = '"+ old +"'")
-		con.commit()
-		con.execute("update episode set c18 = '"+ new +"' where c18 = '"+ old +"'")
-		con.commit()
-		con.execute("update files set idPath=2, strFileName = '"+ new +"' where strFileName = '"+ old +"'")
-		con.commit()
-		con.close()
-
-	except sqlite3.Error as e:
-		dberror = db.replace('C:\Users\Decaedro\AppData\Roaming\Kodi','')
-		mensagemok("Zelaznog","Could not open database %s: %s" % (dberror,e))
-
-####################################################### CONSTANTES #####################################################
-
-versao = '0.1'
+versao = '1.0.3'
 addon_id = 'plugin.video.zelaznog'
 MainURL = 'http://zelaznog.net/'
 art = '/resources/art/'
@@ -35,11 +15,7 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko
 selfAddon = xbmcaddon.Addon(id=addon_id)
 wtpath = selfAddon.getAddonInfo('path').decode('utf-8')
 pastaperfil = xbmc.translatePath(selfAddon.getAddonInfo('profile')).decode('utf-8')
-db = pastaperfil
-db = db.replace('\\addon_data\\plugin.video.zelaznog','\\Database\\MyVideos90.db')
-db = db.replace('/addon_data/plugin.video.zelaznog','/Database/MyVideos90.db')
-db = db.replace('MyVideos90.db/','MyVideos90.db')
-db = db.replace('MyVideos90.db\\','MyVideos90.db')
+
 req = sys.argv[0] + sys.argv[2]
 mensagemok = xbmcgui.Dialog().ok
 mensagemprogresso = xbmcgui.DialogProgress()
@@ -81,7 +57,6 @@ def analyzer(user, url):
       final_srt = MainURL + 'streams/Legendas/' + final_filename.replace('.strm','.srt')
       final_srt = final_srt.replace(' ','%20')
 
-      clean_db(final_filename, req)
       mensagemprogresso.close()
 
       comecarvideo(final_filename, final_image, final_url, legendas=final_srt)
@@ -139,7 +114,8 @@ except: pass
 
 if url==None or len(url)<1:
       print "Versao Instalada: v" + versao
-      #addDir('[COLOR blue][B]Configurar[/B][/COLOR]',MainURL,6,wtpath + art + 'logo.png',1,True)
+      addDir('[COLOR yellow][B]Versão Instalada:[/B] '+ versao+'[/COLOR]',MainURL,6,wtpath + art + 'logo.png',1,True)
+      addDir('[COLOR blue][B]Configurar[/B][/COLOR]',MainURL,6,wtpath + art + 'logo.png',1,True)
 else: 
       analyzer(user, url)
 
