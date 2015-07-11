@@ -6,8 +6,10 @@
     <datadir zip="true">https://github.com/GonzalezAtWork/zelaznog_video/raw/master/repo/</datadir>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>Install Zelaznog's Addons</summary>
-    <description>Download and install addons by Zelaznog</description>
-    <platform>all</platform>
+        <platform>all</platform>
+        <language>en</language>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <summary>Ver arquivos do sistema Zelaznog</summary>
+        <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
   </extension>
 </addon>
