@@ -13,11 +13,13 @@
         <platform>all</platform>
         <language>en</language>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <forum>http://mediabrowser.tv/community</forum>
         <summary>Ver arquivos do sistema Zelaznog</summary>
         <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
-        <forum>http://forum.xbmc.org</forum>
-        <website>https://github.com/GonzalezAtWork/zelaznog_video</website>
-        <source>https://github.com/GonzalezAtWork/zelaznog_video</source>
     </extension>
+    <extension point="xbmc.addon.repository"
+        name="Zelaznog's Add-on Repository">
+    <info compressed="false">https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addon.xml</info>
+    <checksum>https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addon.xml.md5</checksum>
+    <datadir zip="true">https://github.com/GonzalezAtWork/zelaznog_video/raw/master/repo/</datadir>
+  </extension>
 </addon>
