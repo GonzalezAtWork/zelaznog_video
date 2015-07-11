@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.zelaznog"
+       name="Zelaznog"
+       version="1.0.1"
+       provider-name="Zelaznog">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>audio image video executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <language>en</language>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum>http://mediabrowser.tv/community</forum>
+        <summary>Ver arquivos do sistema Zelaznog</summary>
+        <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
+        <forum>http://forum.xbmc.org</forum>
+        <website>https://github.com/GonzalezAtWork/zelaznog_video</website>
+        <source>https://github.com/GonzalezAtWork/zelaznog_video</source>
+    </extension>
+</addon>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+   <setting label="Configuracoes Gerais" type="lsep" />
+   <setting id="username" type="text" label="Username zelaznog.net" default=""/>
+   <setting id="password" type="text" label="Password zelaznog.net" default="" option="hidden" enable="!eq(-1,false)"/>
+   <setting id="bitrate" label="Qualidade" type="labelenum" values="200kbps|500kbps|1500kbps" default="1500kbps"/>
+   <setting id="marcadorultimaseccao" type="text" label="Ultima Secao" default="" visible="false"/>
+</settings>
