@@ -24,6 +24,7 @@ username = urllib.quote(selfAddon.getSetting('username'))
 password = selfAddon.getSetting('password')
 bitrate = urllib.quote(selfAddon.getSetting('bitrate')).replace('kbps','')
 
+#testando
 ########################################################### PLAYER ################################################
 
 def analyzer(user, url):

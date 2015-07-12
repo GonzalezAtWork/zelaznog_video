@@ -9,4 +9,4 @@
 - Allow the MAX option to bitrate, to 720p quality to videos
 
 [B]1.0.0:[/B]
-- First version of the plugin
+- First version of the plugin 
