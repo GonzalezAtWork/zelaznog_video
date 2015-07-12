@@ -2,45 +2,46 @@
 <addons>
 	<addon id="repository.zelaznog" name="Zelaznog's Addons" version="1.0.0" provider-name="Zelaznog">
 	  <extension point="xbmc.addon.repository" name="Zelaznog's Addon Repository">
-		<dir>
-			<info compressed="false">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
-			<checksum>http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
-			<datadir zip="true">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/</datadir>
-		</dir>
+	    <dir>
+	      <info compressed="false">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
+	      <checksum>http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
+	      <datadir zip="true">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/</datadir>
+	    </dir>
 	    <info compressed="false">https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
 	    <checksum>https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
 	    <datadir zip="true">https://github.com/GonzalezAtWork/zelaznog_video/raw/master/repo/</datadir>
 	  </extension>
 	  <extension point="xbmc.addon.metadata">
-	        <platform>all</platform>
-	        <language>en</language>
-	        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-	        <summary>Ver arquivos do sistema Zelaznog</summary>
-	        <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
+	    <platform>all</platform>
+	    <language>en</language>
+	    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+	    <summary>Ver arquivos do sistema Zelaznog</summary>
+	    <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
 	  </extension>
 	</addon>
-	<addon id="plugin.video.zelaznog"
-	       name="Zelaznog"
-	       version="1.0.3"
-	       provider-name="Zelaznog">
-	    <requires>
-	        <import addon="xbmc.python" version="2.1.0"/>
-	    </requires>
-	    <extension point="xbmc.python.pluginsource" library="default.py">
-	      <provides>audio image video executable</provides>
-	    </extension>
-	    <extension point="xbmc.addon.metadata">
-	        <platform>all</platform>
-	        <language>en</language>
-	        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-	        <summary>Ver arquivos do sistema Zelaznog</summary>
-	        <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
-	    </extension>
-	    <extension point="xbmc.addon.repository"
-	        name="Zelaznog's Add-on Repository">
-	    <info compressed="false">https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
-	    <checksum>https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
-	    <datadir zip="true">https://github.com/GonzalezAtWork/zelaznog_video/raw/master/repo/</datadir>
-	  </extension>
+	<addon id="plugin.video.zelaznog" name="Zelaznog's Videos" version="1.0.3" provider-name="Zelaznog">
+		<requires>
+			<import addon="xbmc.python" version="2.1.0"/>
+		</requires>
+		<extension point="xbmc.python.pluginsource" library="default.py">
+			<provides>audio image video executable</provides>
+		</extension>
+		<extension point="xbmc.addon.metadata">
+			<platform>all</platform>
+			<language>en</language>
+			<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+			<summary>Ver arquivos do sistema Zelaznog</summary>
+			<description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
+		</extension>
+		<extension point="xbmc.addon.repository" name="Zelaznog's Addon Repository">
+			<dir>
+				<info compressed="false">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
+				<checksum>http://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
+				<datadir zip="true">http://raw.github.com/GonzalezAtWork/zelaznog_video/master/</datadir>
+			</dir>
+			<info compressed="false">https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml</info>
+			<checksum>https://raw.github.com/GonzalezAtWork/zelaznog_video/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://github.com/GonzalezAtWork/zelaznog_video/raw/master/repo/</datadir>
+		</extension>
 	</addon>
 </addons>
