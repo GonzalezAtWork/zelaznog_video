@@ -7,7 +7,7 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,
 from resources.lib.net import Net
 net=Net()
 
-versao = '1.0.3'
+versao = '1.0.4'
 addon_id = 'plugin.video.zelaznog'
 MainURL = 'http://zelaznog.net/'
 art = '/resources/art/'
@@ -28,7 +28,7 @@ bitrate = urllib.quote(selfAddon.getSetting('bitrate')).replace('kbps','')
 ########################################################### PLAYER ################################################
 
 def analyzer(user, url):
-      mensagemprogresso.create('Zelaznog', 'Conectando...')
+      mensagemprogresso.create('Zelaznog', 'Conectando...\n\nUsuário: ' + username + '\nBitrate: ' + bitrate)
 
       final_url = ''
       final_srt = ''
@@ -63,6 +63,9 @@ def analyzer(user, url):
       comecarvideo(final_filename, final_image, final_url, legendas=final_srt)
 
 def comecarvideo(name,image_url, url,legendas=None):
+
+        mensagemprogresso.create('Zelaznog', 'Conectando...\n\nArquivo: ' + name)
+
         playeractivo = xbmc.getCondVisibility('Player.HasMedia')
         item = urllib.unquote( urllib.unquote( name ) ).decode("utf-8")
         listItem = xbmcgui.ListItem(item)
@@ -78,6 +81,8 @@ def comecarvideo(name,image_url, url,legendas=None):
         if legendas != None: 
             time.sleep(2)
             xbmc.Player().setSubtitles(legendas.encode("utf-8"))
+
+        mensagemprogresso.close()
 
 def addDir(name,url,mode,iconimage,total,pasta,atalhos=False):
       u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)
