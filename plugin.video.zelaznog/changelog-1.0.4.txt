@@ -1,0 +1,15 @@
+[B]1.0.4:[/B]
+- better messages
+
+[B]1.0.3:[/B]
+- fixes for database rename
+
+[B]1.0.2:[/B]
+- support to the new repository add on
+
+[B]1.0.1:[/B]
+- Source is now available online
+- Allow the MAX option to bitrate, to 720p quality to videos
+
+[B]1.0.0:[/B]
+- First version of the plugin
