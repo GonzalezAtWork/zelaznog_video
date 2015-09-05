@@ -7,7 +7,7 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,
 from resources.lib.net import Net
 net=Net()
 
-versao = '1.0.5'
+versao = '1.0.6'
 addon_id = 'plugin.video.zelaznog'
 MainURL = 'http://zelaznog.net/'
 art = '/resources/art/'
@@ -46,17 +46,17 @@ def analyzer(user, url, filename):
             final_url = re.compile('"url":"(.+?)"').findall(final)[0]
             final_image = re.compile('"image":"(.+?)"').findall(final)[0]
             final_filename = re.compile('"file_name":"(.+?)"').findall(final)[0]
+            final_srt = re.compile('"subtitle":"(.+?)"').findall(final)[0]
       except: pass
       final_url = final_url.replace('\u0026','&').replace('\u003c','<').replace('\u003e','>').replace('\\','')
       final_filename = final_filename.replace('\u0026','&').replace('\u003c','<').replace('\u003e','>').replace('\\','')
+      final_srt = final_srt.replace('\u0026','&').replace('\u003c','<').replace('\u003e','>').replace('\\','')
       final_filename = final_filename.replace('.mkv','.strm')
       final_filename = final_filename.replace('.avi','.strm')
       final_filename = final_filename.replace('.mp4','.strm')
       final_filename = final_filename.replace('.rmvb','.strm')
       final_filename = final_filename.replace('.mov','.strm')
       final_filename = final_filename.replace('.mpg','.strm')
-      final_srt = MainURL + 'streams/Legendas/' + final_filename.replace('.strm','.srt')
-      final_srt = final_srt.replace(' ','%20')
 
       comecarvideo(final_filename, final_image, final_url, legendas=final_srt)
 
