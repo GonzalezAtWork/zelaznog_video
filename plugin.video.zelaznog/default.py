@@ -7,7 +7,7 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,
 from resources.lib.net import Net
 net=Net()
 
-versao = '1.0.6'
+versao = '1.0.7'
 addon_id = 'plugin.video.zelaznog'
 MainURL = 'http://zelaznog.net/'
 art = '/resources/art/'
@@ -58,25 +58,17 @@ def analyzer(user, url, filename):
       final_filename = final_filename.replace('.mov','.strm')
       final_filename = final_filename.replace('.mpg','.strm')
 
-      comecarvideo(final_filename, final_image, final_url, legendas=final_srt)
+      comecarvideo(final_filename, final_image, final_url, final_srt)
 
-def comecarvideo(name,image_url, url,legendas=None):
+def comecarvideo(name, image_url, url, legendas = None):
 
         playeractivo = xbmc.getCondVisibility('Player.HasMedia')
-        item = urllib.unquote( urllib.unquote( name ) ).decode("utf-8")
-        listItem = xbmcgui.ListItem(item)
-        listItem.setThumbnailImage(image_url)
-        listItem.setIconImage('DefaultVideo.png')
-        listItem.setProperty("IsPlayable", "true")
-        listItem.select(True)
-        listItem.setPath(url)
-        listItem.addStreamInfo('subtitle', { 'language': 'br' })
-        
-        xbmcplugin.setResolvedUrl(handle=int(sys.argv[1]), succeeded=True, listitem=listItem)
 
-        if legendas != None: 
-            time.sleep(2)
-            xbmc.Player().setSubtitles(legendas.encode("utf-8"))
+        item = xbmcgui.ListItem(path=url)
+        item.setProperty("IsPlayable", "true")
+        item.setProperty('mimetype', 'video/mp4')
+        item.setSubtitles([legendas.encode("utf-8")])
+        xbmcplugin.setResolvedUrl(handle=int(sys.argv[1]), succeeded=True, listitem=item)        
 
         mensagemprogresso.close()
 
