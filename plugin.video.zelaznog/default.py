@@ -7,7 +7,7 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,
 from resources.lib.net import Net
 net=Net()
 
-versao = '1.0.7'
+versao = '1.0.8'
 addon_id = 'plugin.video.zelaznog'
 MainURL = 'http://zelaznog.net/'
 art = '/resources/art/'
@@ -64,11 +64,12 @@ def comecarvideo(name, image_url, url, legendas = None):
 
         playeractivo = xbmc.getCondVisibility('Player.HasMedia')
 
-        item = xbmcgui.ListItem(path=url)
+        item = xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=image_url)
         item.setProperty("IsPlayable", "true")
         item.setProperty('mimetype', 'video/mp4')
         item.setSubtitles([legendas.encode("utf-8")])
-        xbmcplugin.setResolvedUrl(handle=int(sys.argv[1]), succeeded=True, listitem=item)        
+        item.setPath(url)
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)        
 
         mensagemprogresso.close()
 

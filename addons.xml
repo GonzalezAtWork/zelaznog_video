@@ -19,7 +19,7 @@
 	    <description>Acessar todos os arquivos do sistema Zelaznog de filmes e series.</description>
 	  </extension>
 	</addon>
-	<addon id="plugin.video.zelaznog" name="Zelaznog's Videos" version="1.0.7" provider-name="Zelaznog">
+	<addon id="plugin.video.zelaznog" name="Zelaznog's Videos" version="1.0.8" provider-name="Zelaznog">
 		<requires>
 			<import addon="xbmc.python" version="2.1.0"/>
 		</requires>
